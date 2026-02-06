@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.ds1nc.anidesk</id>
+  <name>AniDesk</name>
+  <summary>Unofficial desktop client of Anixart</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0</project_license>
+  <developer id="com.ds1nc">
+    <name>DesConnet, hack1exe</name>
+  </developer>
+  <description>
+    <p>
+      AniDesk is an unofficial open-source desktop client for the Anixart mobile application,
+      providing a convenient way to watch anime and get information about releases.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Use your Anixart account</li>
+      <li>Built-in video player</li>
+      <li>Video upscaling with Anime4K</li>
+      <li>Discord Rich Presence</li>
+      <li>Dark and light themes</li>
+    </ul>
+  </description>
+  <url type="homepage">https://anidesk.ds1nc.ru</url>
+  <url type="bugtracker">https://github.com/theDesConnet/AniDesk/issues</url>
+  <url type="vcs-browser">https://github.com/theDesConnet/AniDesk</url>
+  <launchable type="desktop-id">com.ds1nc.anidesk.desktop</launchable>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="0.0.1-beta.6" date="2025-01-01">
+      <description>
+        <p>Beta release</p>
+      </description>
+    </release>
+  </releases>
+  <screenshots>
+    <screenshot type="default">
+      <caption>AniDesk main window</caption>
+      <image>https://anidesk.ds1nc.ru/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+</component>

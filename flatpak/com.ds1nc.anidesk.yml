@@ -1,0 +1,55 @@
+app-id: com.ds1nc.anidesk
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: '23.08'
+command: anidesk
+separate-locales: false
+
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=wayland
+  - --socket=pulseaudio
+  - --share=network
+  - --device=dri
+  - --socket=session-bus
+  - --system-talk-name=org.freedesktop.UPower
+  - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.kde.StatusNotifierWatcher
+  - --filesystem=xdg-videos:ro
+  - --env=ELECTRON_OZONE_PLATFORM_HINT=auto
+
+modules:
+  - name: anidesk
+    buildsystem: simple
+    build-commands:
+      - install -d /app/lib/anidesk
+      - cp -r anidesk-linux-x64/* /app/lib/anidesk/
+      - chmod +x /app/lib/anidesk/AniDesk
+      - install -Dm755 anidesk.sh /app/bin/anidesk
+      - install -Dm644 com.ds1nc.anidesk.desktop /app/share/applications/com.ds1nc.anidesk.desktop
+      - install -Dm644 com.ds1nc.anidesk.metainfo.xml /app/share/metainfo/com.ds1nc.anidesk.metainfo.xml
+      - install -Dm644 anidesk-icon-256.png /app/share/icons/hicolor/256x256/apps/com.ds1nc.anidesk.png
+      - install -Dm644 anidesk-icon-128.png /app/share/icons/hicolor/128x128/apps/com.ds1nc.anidesk.png
+      - install -Dm644 anidesk-icon-64.png /app/share/icons/hicolor/64x64/apps/com.ds1nc.anidesk.png
+      - install -Dm644 anidesk-icon-512.png /app/share/icons/hicolor/512x512/apps/com.ds1nc.anidesk.png
+    sources:
+      - type: dir
+        path: ../out/AniDesk-linux-x64
+        dest: anidesk-linux-x64
+      - type: file
+        path: anidesk.sh
+      - type: file
+        path: com.ds1nc.anidesk.desktop
+      - type: file
+        path: com.ds1nc.anidesk.metainfo.xml
+      - type: file
+        path: anidesk-icon-512.png
+      - type: file
+        path: anidesk-icon-256.png
+      - type: file
+        path: anidesk-icon-128.png
+      - type: file
+        path: anidesk-icon-64.png

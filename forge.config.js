@@ -42,6 +42,36 @@ module.exports = {
       name: '@electron-forge/maker-rpm',
       config: {},
     },
+    {
+      name: '@electron-forge/maker-flatpak',
+      config: {
+        options: {
+          id: 'com.ds1nc.anidesk',
+          productName: 'AniDesk',
+          genericName: 'Anime Client',
+          description: 'Unofficial desktop client of Anixart',
+          categories: ['Video', 'AudioVideo', 'Network'],
+          mimeType: [],
+          icon: 'public/assets/icons/anidesk-icon.png',
+          homepage: 'https://anidesk.ds1nc.ru',
+          license: 'GPL-2.0',
+          branch: 'stable',
+          runtimeVersion: '23.08',
+          baseVersion: '23.08',
+          finishArgs: [
+            '--share=ipc',
+            '--socket=x11',
+            '--socket=wayland',
+            '--socket=pulseaudio',
+            '--share=network',
+            '--device=dri',
+            '--talk-name=org.freedesktop.Notifications',
+            '--talk-name=org.kde.StatusNotifierWatcher',
+            '--filesystem=xdg-videos:ro',
+          ],
+        },
+      },
+    },
   ],
   plugins: [
     {

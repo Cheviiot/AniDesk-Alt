@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=AniDesk
+Comment=Unofficial desktop client of Anixart
+Exec=anidesk %U
+Icon=com.ds1nc.anidesk
+Terminal=false
+Type=Application
+Categories=Video;AudioVideo;Network;
+StartupWMClass=AniDesk
+Keywords=anime;anixart;video;player;
